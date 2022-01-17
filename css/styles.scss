@@ -1,14 +1,12 @@
-@import './variaveis-e-mixins';
+@import "variaveis-e-mixins";
 
-@import './normalize';
-@import './reset';
+@import "normalize";
+@import "reset";
 
-@import './grid';
-@import './geral';
+@import "grid";
+@import "geral";
 
-@import './contato';
-@import './portfolio';
-@import './produtos';
-@import './sobre';
-
-@import './responsivo';
+@import "contato";
+@import "portfolio";
+@import "produtos";
+@import "sobre";
