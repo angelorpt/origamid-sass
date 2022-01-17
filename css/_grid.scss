@@ -1,3 +1,19 @@
+@mixin device($dispositivo) {
+  @if $dispositivo == "desktop" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $dispositivo == "tablet" {
+    @media (min-width: 768px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $dispositivo == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
 *,
 *:before,
 *:after {
@@ -46,7 +62,7 @@ $colunas: 16;
   clear: both;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@include device(tablet) {
   $container: 768;
 
   @for $i from 1 through $colunas {
@@ -65,7 +81,7 @@ $colunas: 16;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@include device(mobile) {
   $container: 300;
 
   %mobile {
